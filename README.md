@@ -1,2 +1,2 @@
 # CodeWars
-CodeWars Katas are solve here
+CodeWars Katas are solved here
