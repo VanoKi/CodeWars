@@ -2,22 +2,30 @@ from icecream import ic
 from words import words
 
 letters = 'GQEMAUVXY'
-def longest_word(letters):
-    word2 = ''
-    ans = []
-    for word in words:
-        for char in word:
-            if char in letters:
-                letters.replace(char, '')
-            ic(letters)
-    # ans.append(word)
-    return ans
 
-def check_word(letters):
-    word = 'GAME'
+def check_word(letters, word):
+    letters_len = len(letters)
     for char in word:
         if char in letters:
-            ic(char)
-    return word
+            letters = letters.replace(char, '')
+    if letters_len == len(letters) +  len(word):
+        return word
+def longest_word(letters):
+    ans = []
+    for word in words:
+        result_of_compare = check_word(letters, word)
+        if result_of_compare:
+            # ans.append(result_of_compare)
+            if ans:
+                if len(result_of_compare) > len(ans[0]):
+                    if ans[0] < result_of_compare:
+                        ans[0] = result_of_compare
+                    else:
+                        ans.append(result_of_compare)
+            else:
+                ans.append(result_of_compare)
+    return ans
+
+# longest_word(letters)
 ic(longest_word(letters))
-# ic(check_word(letters))
+# ic(check_word(letters, "GAME"))
