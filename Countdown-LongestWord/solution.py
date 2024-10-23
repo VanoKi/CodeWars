@@ -1,13 +1,13 @@
 from icecream import ic
 from words import words
 
-letters = 'TDWAYZROE'
+letters = 'IIIWUGEZI'
 
 def check_word(letters, word):
     letters_len = len(letters)
     for char in word:
         if char in letters:
-            letters = letters.replace(char, '')
+            letters = letters.replace(char, '', 1)
     if letters_len == len(letters) +  len(word):
         return word
 def longest_word(letters):
@@ -21,53 +21,7 @@ def longest_word(letters):
                 ans = [result_of_compare]
             elif len(result_of_compare) == len(ans[0]):
                 ans.append(result_of_compare)
-    return ans
+    return ans if ans else None
 
-# longest_word(letters)
 ic(longest_word(letters))
-# ic(check_word(letters, "GAME"))
-
-def check_result():
-    words = ['ART',
-                            'DARE',
-                            'DART',
-                            'DATE',
-                            'DAY',
-                            'DEW',
-                            'DOT',
-                            'DYE',
-                            'EAR',
-                            'OAR',
-                            'ORE',
-                            'RATE',
-                            'RAY',
-                            'ROAD',
-                            'ROD',
-                            'TAR',
-                            'TEAR',
-                            'TODAY',
-                            'TOE',
-                            'TOWER',
-                            'TRADE',
-                            'TRAY',
-                            'TRY',
-                            'WAR',
-                            'WATER',
-                            'WAY',
-                            'WEAR',
-                            'WORD',
-                            'YARD',
-                            'YAW',
-                            'YEAR',
-                            'ZERO']
-    ans = []
-    for word in words:
-        if not ans:
-            ans.append(word)
-        elif len(word) > len(ans[0]):
-            ans = [word]
-        elif len(word) == len(ans[0]):
-            ans.append(word)
-    return ans
-
-# ic(check_result())
+# ic(check_word(letters, 'LOOK'))
