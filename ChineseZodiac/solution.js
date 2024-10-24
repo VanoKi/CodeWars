@@ -9,7 +9,7 @@ function chineseZodiac(year){
     let cycle = year-1924
     let animalIndex = (cycle%12)
     let elementsIndex = Math.floor(cycle/2)%5
-    return `${elements[elementsIndex]} ${animals[animalIndex]}`
+       return `${elements[elementsIndex]} ${animals[animalIndex]}`
 }
 
 console.log(chineseZodiac(2016))
