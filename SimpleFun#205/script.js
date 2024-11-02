@@ -13,12 +13,12 @@ if(rightPart){
         ans.push('.' + '0'.repeat(i) + rightPart[i])
     }
 }
-// ic(ans.map(i => +i))
-let numb = +leftPart;
-let len = leftPart.length
-while (len > 0) {
-    ic(Math.floor(numb))
-    numb = numb / 10
-    // ic(numb % 10)
-    len--
-}
+ic(ans)
+// let numb = +leftPart;
+// let len = leftPart.length
+// while (len > 0) {
+//     ic(Math.floor(numb))
+//     numb = numb / 10
+//     // ic(numb % 10)
+//     len--
+// }
