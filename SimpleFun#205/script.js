@@ -1,16 +1,20 @@
 const ic = require('node-icecream')()
 
-let n = "7970521.5544"
+let n = "1.00000"
 let [leftPart, rightPart] = n.split('.')
 // ic(leftPart, rightPart)
 let ans = []
 for (let i = 0; i < leftPart.length; i++) {
-    ans.push(leftPart[i] + '0'.repeat(leftPart.length - i - 1))
+    if(leftPart[i] !== '0'){
+        ans.push(leftPart[i] + '0'.repeat(leftPart.length - i - 1))
+    }
 }
 // ic(ans)
 if(rightPart){
     for (let i = 0; i < rightPart.length; i++) {
-        ans.push('.' + '0'.repeat(i) + rightPart[i])
+        if(rightPart[i] !== '0'){
+            ans.push('.' + '0'.repeat(i) + rightPart[i])
+        }
     }
 }
 ic(ans)
