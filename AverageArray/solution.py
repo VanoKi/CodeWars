@@ -1,14 +1,13 @@
 from icecream import ic
 
-def func(arr):
-    ans = []
-    for i in range(len(arr) - 1):
-        # ic(ans)
-        # ans = [sum(i) for i in list(zip(ans, arr[i]))]
-        ic(arr[i], arr[i + 1])
-    # return [i / len(arr) for i in ans]
+arr = [ [2, 3, 9, 10, 7], [12, 6, 89, 45, 3], [9, 12, 56, 10, 34], [67, 23, 1, 88, 34] ]
 
-ic(func([ [2, 3, 9, 10, 7], [12, 6, 89, 45, 3], [9, 12, 56, 10, 34], [67, 23, 1, 88, 34] ]))
-# a = [2, 3, 9, 10, 7]
-# b = [12, 6, 89, 45, 3]
-# ic([sum(i) for i in list(zip(a, b))])
+def avg_array(arr):
+    ans = arr[0]
+    for i in arr[1:]:
+        for j in range(len(i)):
+            ans[j] += i[j]
+        ic(ans)
+    return [i/len(arr) for i in ans]
+
+ic(avg_array(arr))
