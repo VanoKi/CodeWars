@@ -1,18 +1,18 @@
 const ic = require('node-icecream')()
 
 function reverseVowels(str) {
-    const vowels = 'AEIOU'
+    const vowels = 'AEIOUaeiou'
     const vowelsInStr = []
     const result = []
     str = Array.from(str)
     for (const strElement of str) {
-        if (vowels.toLowerCase().includes(strElement)) {
+        if (vowels.includes(strElement)) {
             // ic(strElement)
             vowelsInStr.push(strElement)
         }
     }
     for (const strElement of str) {
-        if (vowels.toLowerCase().includes(strElement)) {
+        if (vowels.includes(strElement)) {
             result.push(vowelsInStr.pop())
         } else {
             result.push(strElement)
@@ -21,5 +21,4 @@ function reverseVowels(str) {
     return result.join('')
 }
 
-ic(reverseVowels("Tomatoes"))
-// ic('AEIOUY'.includes('i'))
+ic(reverseVowels("Reverse Vowels In A String"))
