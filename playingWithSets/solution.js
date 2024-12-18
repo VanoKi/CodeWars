@@ -9,6 +9,6 @@ function inter(A, B){
 }
 
 let A =  new Set([1, 2])
-let B = new Set([2,3])
+let B = new Set([1,2])
 
 ic(inter(A, B))
