@@ -4,14 +4,19 @@ function palindrome(str) {
     const vowels = 'AEIOU'
     const vowelsInStr = []
     const consonantInStr = []
-    for (const strElement of str) {
-        if (vowels.includes(strElement.toUpperCase())) {
+    for (let strElement of str) {
+        strElement = strElement.toUpperCase()
+        if (vowels.includes(strElement)) {
             vowelsInStr.push(strElement)
         } else {
             consonantInStr.push(strElement)
         }
     }
-    return consonantInStr
+    function checkPalindrome(arr) {
+        return arr === arr.reverse()
+    }
+    let result = [checkPalindrome(vowelsInStr), checkPalindrome(consonantInStr)]
+    return result
 }
 
 let str = "raCe car"
