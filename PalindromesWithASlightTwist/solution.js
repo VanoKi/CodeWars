@@ -9,16 +9,22 @@ function palindrome(str) {
         if (vowels.includes(strElement)) {
             vowelsInStr.push(strElement)
         } else {
-            consonantInStr.push(strElement)
+            if (strElement.codePointAt(0) > 64 && strElement.codePointAt(0) < 91) {
+                consonantInStr.push(strElement)
+            }
         }
     }
-    function checkPalindrome(arr) {
-        return arr === arr.reverse()
+    const isPalindrome = (arr) => arr === arr.reverse()
+    if(isPalindrome(vowelsInStr) + isPalindrome(consonantInStr) == 2) {
+        return "both"
+    } else if(isPalindrome(vowelsInStr) + isPalindrome(consonantInStr) == 1) {
+            return isPalindrome(vowelsInStr) ? "vowel" : "consonant"
+        } else {
+        return "neither"
+        }
     }
-    let result = [checkPalindrome(vowelsInStr), checkPalindrome(consonantInStr)]
-    return result
-}
 
-let str = "raCe car"
 
+
+let str = "pea13ce"
 ic(palindrome(str))
