@@ -7,10 +7,11 @@ function stringExpansion(s) {
     let ans = ''
     if(s.match(/\d*/g).join('') === '') return s
     let arr = s.match(/\d[A-Za-z]*/ig)
+    ic(arr)
     for (let i = 0; i < arr.length; i++) {
-        let chanck = arr[i]
-        let symbols = chanck.slice(1)
-        let digit = chanck[0]
+        let chunk = arr[i]
+        let symbols = chunk.slice(1)
+        let digit = chunk[0]
         for (let j = 0; j < symbols.length; j++) {
             ans += symbols[j].repeat(+digit)
         }
