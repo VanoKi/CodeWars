@@ -1,6 +1,6 @@
 const ic = require('node-icecream')()
 
-let str = 'tweet'
+let str = 'like'
 let dic = {}
 for (let i = 0; i < str.length; i++) {
     if (str[i] in dic) {
@@ -10,4 +10,11 @@ for (let i = 0; i < str.length; i++) {
     }
 }
 
-ic(dic)
+for (let i = 0; i < str.length; i++) {
+    if (dic[str[i]] > 1){
+        ic(str[i])
+        break
+    }
+}
+
+// ic(dic)
