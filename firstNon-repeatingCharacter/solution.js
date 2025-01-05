@@ -13,4 +13,4 @@ function firstNonRepeatingLetter(str) {
     return ''
 }
 
-ic(firstNonRepeatingLetter('moonmen'))
+ic(firstNonRepeatingLetter('moom'))
