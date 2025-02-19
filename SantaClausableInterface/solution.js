@@ -1,6 +1,7 @@
 const ic = require('node-icecream')();
 
 function isSantaClausable(obj) {
+    if (typeof obj !== 'object') return false
     const interface = ['sayHoHoHo', 'distributeGifts', 'goDownTheChimney'];
     const ans = []
     for (const key of interface) {
@@ -28,5 +29,6 @@ let notSanta = {
     sayHoHoHo: function() { console.log('Oink Oink!') }
     // no distributeGifts() and no goDownTheChimney()
 };
+let NotSantaClaus = { name: undefined }
 
-ic(isSantaClausable(santa));
+ic(isSantaClausable('just a string'));
