@@ -1,11 +1,20 @@
 const ic = require('node-icecream')();
 
 function isSantaClausable(obj) {
+    const interface = ['sayHoHoHo', 'distributeGifts', 'goDownTheChimney'];
+    const ans = []
     for (const key in obj) {
-        // if (Object.prototype.hasOwnProperty.call(object, key)) {
-        //     const element = object[key];
-            ic(key);
+            if (interface.includes(key)) {
+                if (typeof obj[key] === 'function') {
+                    ans.push(true);
+                }else{
+                    ans.push(false);
+                }
+            }else{
+                ans.push(false);
+            }
         }
+        return ans.every(Boolean);
     }
 
   let santa = {
@@ -14,4 +23,9 @@ function isSantaClausable(obj) {
     goDownTheChimney: function() { console.log('*whoosh*'); }
 };
 
-ic(isSantaClausable(santa));
+let notSanta = {
+    sayHoHoHo: function() { console.log('Oink Oink!') }
+    // no distributeGifts() and no goDownTheChimney()
+};
+
+ic(isSantaClausable(notSanta));
