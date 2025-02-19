@@ -3,8 +3,8 @@ const ic = require('node-icecream')();
 function isSantaClausable(obj) {
     const interface = ['sayHoHoHo', 'distributeGifts', 'goDownTheChimney'];
     const ans = []
-    for (const key in obj) {
-            if (interface.includes(key)) {
+    for (const key of interface) {
+            if (key in obj) {
                 if (typeof obj[key] === 'function') {
                     ans.push(true);
                 }else{
@@ -15,6 +15,7 @@ function isSantaClausable(obj) {
             }
         }
         return ans.every(Boolean);
+        // return ans;
     }
 
   let santa = {
@@ -28,4 +29,4 @@ let notSanta = {
     // no distributeGifts() and no goDownTheChimney()
 };
 
-ic(isSantaClausable(notSanta));
+ic(isSantaClausable(santa));
