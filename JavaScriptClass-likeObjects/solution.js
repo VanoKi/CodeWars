@@ -1,6 +1,6 @@
 const ic = require('node-icecream')()
 
-class JavaScriptClass {
+class Animal {
     constructor(name, type) {
         this.name = name
         this.type = type
@@ -11,5 +11,5 @@ class JavaScriptClass {
     }
     }
 
-const obj = new JavaScriptClass('Max', 'dog')
-ic(obj.sayHello()) // 'Hello, my name is Alice'
+const obj = new Animal('Max', 'dog')
+ic(obj.toString())
