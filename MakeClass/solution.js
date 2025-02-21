@@ -1,22 +1,25 @@
 const ic = require('node-icecream')()
 
 function makeClass(...properities) {
-    return properities
+    const list = properities
+    const that = {}
+    for (const element of list) {
+        that[element] = element
+    }
+    return that
 }
 
-const list = ["name","species","age","health","weight","color"]
+// ic(makeClass("name","species","age","health","weight","color"))
+ic(new makeClass('Bob','Dog','5','good','50lb','brown'))
 
-// class Animal {
-//     constructor(name, species) {
-//         this.name = name;
-//         this.species = species;
-//     }
-//     say() {
-//         return `Hi! I'm ${this.name} and I'm a ${this.species}`
-//     }
-// }
+// function Animal(name,species,age,health,weight,color) {
+//     this.name = name;
+//     this.species = species;
+//     this.age = age;
+//     this.health = health;
+//     this.weight = weight;
+//     this.color = color;
+//   }
+//   const Animel = makeClass('name','species','age','health','weight','color')
 
-// const dog = new Animal('bat', 'dog')
-// ic(dog.say())
-
-ic(makeClass("name","species","age","health","weight","color"))
+// ic(new Animel('Bob','Dog','5','good','50lb','brown'))
