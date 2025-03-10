@@ -12,3 +12,5 @@ class User {
 let user = new User('Ivan')
 ic(user)
 user.SayHI()
+ic(User.prototype.SayHI)
+ic(Object.getOwnPropertyNames(User.prototype))
