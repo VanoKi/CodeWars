@@ -1,25 +1,25 @@
 const ic = require('node-icecream')()
 
-// class User {
-//     constructor(name) {
-//         this.name = name
-//     }
-//     SayHI() {
-//         ic(this.name)
-//     }
-// }
-//
-// let user = new User('Ivan')
-// ic(user)
-// user.SayHI()
-// ic(User.prototype.SayHI)
-// ic(Object.getOwnPropertyNames(User.prototype))
-
-let User = class {
-    sayHi(){
-        ic('Hi')
+class Animal {
+    constructor(name) {
+        this.speed = 0;
+        this.name = name;
+    }
+    run (speed) {
+        this.speed = speed;
+        ic(`${this.name} runs with speed ${this.speed}`)
+    }
+    stop(){
+        this.speed =0;
+        ic(`${this.name} is stopped`)
     }
 }
-
-let user = new User('John')
-user.sayHi()
+let animal = new Animal('My Pet')
+class Rabbit extends Animal{
+    hide() {
+        ic(`${this.name} is hiding`)
+    }
+}
+let rabbit = new Rabbit('White rabbit')
+rabbit.run(5)
+rabbit.hide()
