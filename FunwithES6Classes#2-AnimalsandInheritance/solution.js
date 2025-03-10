@@ -14,12 +14,12 @@ class Animal {
         ic(`${this.name} is stopped`)
     }
 }
-let animal = new Animal('My Pet')
 class Rabbit extends Animal{
-    hide() {
-        ic(`${this.name} is hiding`)
+    constructor(name, earLength) {
+        super(name)
+        this.earLegth = earLength
     }
 }
-let rabbit = new Rabbit('White rabbit')
-rabbit.run(5)
-rabbit.hide()
+let rabbit = new Rabbit('White rabbit', 19)
+ic(rabbit.name)
+ic(rabbit.earLegth)
