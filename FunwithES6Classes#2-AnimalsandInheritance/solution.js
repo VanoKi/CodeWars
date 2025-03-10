@@ -1,25 +1,25 @@
 const ic = require('node-icecream')()
 
 class Animal {
-    constructor(name) {
-        this.speed = 0;
-        this.name = name;
+    constructor(name, age, legs, species, status) {
+        this.name = name
+        this.age = age
+        this.legs = legs
+        this.species = species
+        this.status = status
     }
-    run (speed) {
-        this.speed = speed;
-        ic(`${this.name} runs with speed ${this.speed}`)
-    }
-    stop(){
-        this.speed =0;
-        ic(`${this.name} is stopped`)
+    introduce() {
+        return `Hello my name is ${this.name} and I am ${this.age} years old`
     }
 }
-class Rabbit extends Animal{
-    constructor(name, earLength) {
-        super(name)
-        this.earLegth = earLength
+
+class Shark extends Animal{
+    constructor(name, age, status) {
+        super(name, age, status);
+        this.species = 'shark'
+        this.legs = 0
     }
 }
-let rabbit = new Rabbit('White rabbit', 19)
-ic(rabbit.name)
-ic(rabbit.earLegth)
+
+let shark = new Shark('name', 'age', 'status')
+ic(shark.legs)
