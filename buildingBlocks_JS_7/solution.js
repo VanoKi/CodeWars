@@ -22,7 +22,7 @@ class Block {
         return this.length * this.width * this.height
     }
     getSurfaceArea() {
-        return this.length * this.width
+        return 2 * ((this.length * this.width ) + (this.length * this.height ) + (this.height * this.width ))
     }
 }
 var b = new Block([2,4,6])
