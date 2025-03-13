@@ -9,15 +9,12 @@ class Block {
     getWidth() {
         return this.width
     }
-
     getLength() {
         return this.length
     }
-
     getHeight() {
         return this.height
     }
-
     getVolume() {
         return this.length * this.width * this.height
     }
