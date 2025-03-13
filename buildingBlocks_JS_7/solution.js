@@ -1,10 +1,33 @@
 const ic = require('node-icecream')()
 
 class Block {
-    constructor(width, length, height) {
-        this.width = width
-        this.length = length
-        this.height  = height
+    constructor(array) {
+        this.width = array[0]
+        this.height  = array[1]
+        this.length = array[2]
+    }
+    getWidth() {
+        return this.width
     }
 
+    getLength() {
+        return this.length
+    }
+
+    getHeight() {
+        return this.height
+    }
+
+    getVolume() {
+        return this.length * this.width * this.height
+    }
+    getSurfaceArea() {
+        return this.length * this.width
+    }
 }
+var b = new Block([2,4,6])
+ic(b.getWidth())
+ic(b.getHeight())
+ic(b.getLength())
+ic(b.getVolume())
+ic(b.getSurfaceArea())
