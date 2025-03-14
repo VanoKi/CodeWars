@@ -12,9 +12,9 @@ function transpose(song, interval){
         .split(' ')
     // return sharp[flat.indexOf(song)]
     const move = (item) => {
-        let index = sharp.indexOf(song)
-        if (song.includes('b')) {
-            index = flat.indexOf(song)
+        let index = sharp.indexOf(item)
+        if (item.includes('b')) {
+            index = flat.indexOf(item)
             return sharp[(index + interval) % 12]
         }
         return sharp[(index + interval) % 12]
