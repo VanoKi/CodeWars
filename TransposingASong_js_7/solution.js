@@ -15,12 +15,12 @@ function transpose(song, interval){
         let index = sharp.indexOf(item)
         if (item.includes('b')) {
             index = flat.indexOf(item)
-            return sharp[(index + interval) % 12]
+            return sharp[(((index + interval) % 12) + 12) % 12]
         }
-        return sharp[(index + interval) % 12]
+        return sharp[(((index + interval) % 12) + 12) % 12]
     }
     // return sharp[(sharp.indexOf(song) + interval) % 12]
     return song.map(item => move(item))
 }
 
-ic(transpose(['Ab', 'Gb'], 2))
+ic(transpose(['Bb', 'C#', 'E'], -4))
