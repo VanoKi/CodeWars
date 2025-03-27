@@ -1,8 +1,15 @@
 const ic = require('node-icecream')()
 
 function formatWords(words){
-    return `${words.slice(0, -1).join(', ')} and ${words.at(-1)}`
-    // return words.slice(0, -1)
+    let suff = []
+    let ans = []
+    for (let i = words.length - 1; i >= 0; i--) {
+        if (words[i]) {
+            suff.unshift(words[i])
+
+        }
+    }
+    return suff
 }
-let string = ['one', 'two', '']
+let string = ['three', 'one', 'two', '']
 ic(formatWords(string))
