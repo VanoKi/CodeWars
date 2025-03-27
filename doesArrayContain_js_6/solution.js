@@ -1,13 +1,11 @@
 const ic = require('node-icecream')()
 
 Object.defineProperty( Array.prototype, "containsAll", { value: function containsAll(array) {
-        // a.forEach(item => {
-        //     if(!this.includes(item)) return false
-        // })
-        for (let i = 0; i < array.length; i++) {
-            if (!this.includes(array[i])) return false
-        }
-        return true
+        // for (let i = 0; i < array.length; i++) {
+        //     if (!this.includes(array[i])) return false
+        // }
+        // return true
+        return array.every(item => this.includes(item))
     } } );
 
 const a = [1,2,3,4,5,6,7,8,9,10,11,12,13]
