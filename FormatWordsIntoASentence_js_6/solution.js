@@ -1,6 +1,7 @@
 const ic = require('node-icecream')()
 
 function formatWords(words) {
+    if (!Array.isArray(words)) return ''
     let commas = words
         .filter(item => item && item.trim() !== '')
     ic(commas)
