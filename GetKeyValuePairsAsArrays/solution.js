@@ -1,7 +1,6 @@
 const ic = require('node-icecream')()
 
 function keysAndValues(dict) {
-    // return dict.valueOf()
     const keys = []
     const values = []
     for (const dictKey in dict) {
