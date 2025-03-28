@@ -4,8 +4,17 @@ function multipleSplit(string, delimiters=[]){
     let ans = []
     let word = ''
     for (let i = 0; i < string.length; i++) {
-        if (delimiters.includes(string[i])) ic(i)
+        // word += string[i]
+        if (delimiters.includes(string[i])) {
+            ans.push(word)
+            word = ''
+            continue
+        }
+        word += string[i]
     }
+    // ic(word)
+    return ans.concat(word).filter(item => item)
 }
-const string = 'Hi, how are you?'
-ic(multipleSplit(string, [' ']))
+// const string = 'Hi, how are you?'
+const string = '1+2-3'
+ic(multipleSplit('Hi everybody!', [' ', '!']))
