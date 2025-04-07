@@ -5,10 +5,16 @@ function solve(arr){
     let ans = []
     ic(sortedArray)
     for (let i = 0; i < arr.length / 2; i++) {
-        // ic(arr[i], arr[arr.length - i + 1])
-        // ic(i, arr.length - i - 1)
-        // ic(arr[arr.length - i - 1])
+        let Max = arr[i]
+        let Min = arr[arr.length - i - 1]
+        if (Min !== Max) {
+            ans.push(Max)
+            ans.push(Min)
+        } else {
+            ans.push(Max)
+        }
     }
+    return ans
 };
 
 const array = [15,11,10,7,12]
