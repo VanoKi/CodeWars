@@ -9,7 +9,11 @@ function duplicateCount (text) {
       dict[item] = 1
     }
   }
-  return dict
+  let duplicateCount = 0
+  for (const dictKey in dict) {
+    if (dict[dictKey] > 1) duplicateCount += 1
+  }
+  return duplicateCount
 }
 ic(duplicateCount("aabbcde"))
 
