@@ -1,5 +1,5 @@
 const ic = require('node-icecream')()
-function nameFunction (fn, xss) {
+function gridMap (fn, xss) {
     const ans = []
     for (let i = 0; i < xss.length; i++) {
         const subArray = []
