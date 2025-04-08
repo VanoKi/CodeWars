@@ -10,5 +10,5 @@ function gridMap (fn, xss) {
     }
     return ans
 }
-ic(nameFunction(x => x.toUpperCase(),[['h','E','l','l','O'],['w','O','r','L','d']]))
+ic(gridMap(x => x.toUpperCase(),[['h','E','l','l','O'],['w','O','r','L','d']]))
 
