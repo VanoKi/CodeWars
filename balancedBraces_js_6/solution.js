@@ -19,5 +19,5 @@ function isBalanced(str) {
     return [stack.length == 0, count, stack.length]
 }
 
-ic(isBalanced("(string[)5]"))
+ic(isBalanced("({)}"))
 
