@@ -11,11 +11,13 @@ function isBalanced(str) {
             if(right.indexOf(str[i]) === left.indexOf(stack.at(-1))) {
                 count += 1
                 stack.pop()
+            } else {
+                stack.push(str[i])
             }
         }
     }
-    return [stack, count]
+    return [stack.length == 0, count, stack.length]
 }
 
-ic(isBalanced("(string[5])"))
+ic(isBalanced("(string[)5]"))
 
