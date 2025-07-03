@@ -23,7 +23,15 @@ const ANIMALS = [
 
 var roadKill = function(photo) {
     // Your code here!
-    return photo
+    const chars = []
+    for (let i = 0; i < photo.length; i++) {
+        if (photo.charCodeAt(i) > 96 && photo.charCodeAt(0) < 123) {
+            chars.push(photo[i]);
+        }
+    }
+    return chars
 }
 
 ic(roadKill("==========h===yyyyyy===eeee=n==a========"))
+
+
