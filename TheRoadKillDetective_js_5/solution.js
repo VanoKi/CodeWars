@@ -31,6 +31,9 @@ var roadKill = function(photo) {
         }
     }
     // return Array.from(chars)
+    if (chars.size === 0) {
+        return '??'
+    }
     for (let i = 0; i < ANIMALS.length; i++) {
         if(Array.from(chars).every(elem => ANIMALS[i].includes(elem))) {
             return ANIMALS[i]
@@ -39,5 +42,5 @@ var roadKill = function(photo) {
     return '??'
 }
 
-ic(roadKill("=====r=rrr=rra=====eee======bb====b======="))
+ic(roadKill("=============="))
 
