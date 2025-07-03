@@ -1,8 +1,8 @@
 const ic = require('node-icecream')()
 
-const glass = [['H', 'H', 'W', 'O'],['W','W','O','W'],['H','H','O','O']]
+// const glass = [['H', 'H', 'W', 'O'],['W','W','O','W'],['H','H','O','O']]
 // const glass = [['A','A','O','H'],['A', 'H', 'W', 'O'],['W','W','A','W'],['H','H','O','O']]
-
+const glass = []
 
 function separateLiquids(glass) {
     const density = {
@@ -11,13 +11,17 @@ function separateLiquids(glass) {
         'A': 0.87,
         'O': 0.80
     }
-    const flatAndSorted = glass.flat().sort((a, b) => density[a] - density[b]);
-    const result = []
-    const widthOftheGlass = glass[0].length
-    for (let i = 0; i < flatAndSorted.length; i+=widthOftheGlass) {
-        result.push(flatAndSorted.slice(i, i + widthOftheGlass))
+    if (glass.length === 0) {
+        return glass
+    } else {
+        const flatAndSorted = glass.flat().sort((a, b) => density[a] - density[b]);
+        const result = []
+        const widthOftheGlass = glass[0].length
+        for (let i = 0; i < flatAndSorted.length; i+=widthOftheGlass) {
+            result.push(flatAndSorted.slice(i, i + widthOftheGlass))
+        }
+        return result
     }
-    return result
-}
+    }
 
 ic(separateLiquids(glass))
