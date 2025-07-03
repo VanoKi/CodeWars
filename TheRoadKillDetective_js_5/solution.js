@@ -26,7 +26,7 @@ var roadKill = function(photo) {
     // Your code here!
     const chars = new Set()
     for (let i = 0; i < photo.length; i++) {
-        if (photo.charCodeAt(i) > 96 && photo.charCodeAt(0) < 123) {
+        if (photo.charCodeAt(i) > 96 && photo.charCodeAt(i) < 123) {
             chars.add(photo[i])
         }
     }
@@ -36,7 +36,8 @@ var roadKill = function(photo) {
             return ANIMALS[i]
         }
     }
+    return '??'
 }
 
-ic(roadKill("==========h===yyyyyy===eeee=n==a========"))
+ic(roadKill("=====r=rrr=rra=====eee======bb====b======="))
 
