@@ -1,4 +1,5 @@
 const ic = require('node-icecream')()
+// export {log} from console
 
 const ANIMALS = [
     'aardvark',   'alligator', 'armadillo',   'antelope',   'baboon',
@@ -29,9 +30,13 @@ var roadKill = function(photo) {
             chars.add(photo[i])
         }
     }
-    return chars
+    // return Array.from(chars)
+    for (let i = 0; i < ANIMALS.length; i++) {
+        if(Array.from(chars).every(elem => ANIMALS[i].includes(elem))) {
+            return ANIMALS[i]
+        }
+    }
 }
 
 ic(roadKill("==========h===yyyyyy===eeee=n==a========"))
-
 
