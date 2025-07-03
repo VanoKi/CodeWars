@@ -23,10 +23,10 @@ const ANIMALS = [
 
 var roadKill = function(photo) {
     // Your code here!
-    const chars = []
+    const chars = new Set()
     for (let i = 0; i < photo.length; i++) {
         if (photo.charCodeAt(i) > 96 && photo.charCodeAt(0) < 123) {
-            chars.push(photo[i]);
+            chars.add(photo[i])
         }
     }
     return chars
