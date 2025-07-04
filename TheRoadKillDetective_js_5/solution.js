@@ -23,28 +23,16 @@ const ANIMALS = [
 ]
 
 var roadKill = function(photo) {
-    // Your code here!
-    let chars = []
+    let chars = {}
     for (let i = 0; i < photo.length; i++) {
         if (photo.charCodeAt(i) > 96 && photo.charCodeAt(i) < 123) {
-            chars.push(photo[i])
+            if (photo[i] in chars) chars[photo[i]] += 1
+            else chars[photo[i]] = 1
         }
     }
     ic(chars)
-    if (chars.length === 0) {
-        return '??'
-    }
-    const reversedChars = Array.from(chars).reverse().join('')
-    ic(reversedChars)
-    for (let i = 0; i < ANIMALS.length; i++) {
-        // if(ANIMALS[i].includes(chars) || ANIMALS[i].includes(reversedChars)) {
-        //     return ANIMALS[i]
-        const IncludesParts = (parts) => Array.from(ANIMALS[i]).every(element => parts.includes(element))
-        if (IncludesParts(chars) || IncludesParts(reversedChars)) {
-            return ANIMALS[i]
-        }
-    }
+
     return '??'
 }
 
-ic(roadKill("==========h===yyyyyy===eeee=n==a========"))
+ic(roadKill("====rraabbiitt=="))
