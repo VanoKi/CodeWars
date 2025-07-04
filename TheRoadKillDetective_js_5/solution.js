@@ -23,15 +23,26 @@ const ANIMALS = [
 ]
 
 var roadKill = function(photo) {
-    let chars = {}
-    for (let i = 0; i < photo.length; i++) {
-        if (photo.charCodeAt(i) > 96 && photo.charCodeAt(i) < 123) {
-            if (photo[i] in chars) chars[photo[i]] += 1
-            else chars[photo[i]] = 1
+    const createDict = (sequence) => {
+        let chars = {}
+        for (let i = 0; i < sequence.length; i++) {
+            if (sequence.charCodeAt(i) > 96 && sequence.charCodeAt(i) < 123) {
+                if (sequence[i] in chars) chars[sequence[i]] += 1
+                else chars[sequence[i]] = 1
+            }
+        }
+        return chars
+    }
+    const victim = createDict(photo)
+    ic(victim)
+    for (let i = 0; i < ANIMALS.length; i++) {
+        const animal = createDict(ANIMALS[i])
+        ic(animal)
+        for (let j = 0; j < animal.length; j++) {
+            // if (animal[j] in victim && )
+            // ic(animal[j])
         }
     }
-    ic(chars)
-
     return '??'
 }
 
