@@ -37,10 +37,9 @@ var roadKill = function(photo) {
     ic(victim)
     for (let i = 0; i < ANIMALS.length; i++) {
         const animal = createDict(ANIMALS[i])
-        ic(animal)
-        for (let j = 0; j < animal.length; j++) {
-            // if (animal[j] in victim && )
-            // ic(animal[j])
+        // ic(animal)
+        for (const animalKey in animal) {
+            ic(animalKey)
         }
     }
     return '??'
