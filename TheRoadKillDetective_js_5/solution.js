@@ -74,9 +74,11 @@ for (let i = 0; i < ANIMALS.length; i++) {
     const rabbit = victim("====rraabbiitt==")
     const animal = victim(ANIMALS[i])
     for (const animalKey in animal) {
-        if (animalKey in victim) {
+        if (animalKey in rabbit) {
             ans.push(animalKey.repeat(animal[animalKey]))
         }
     }
 }
+// нужно вычитать!
+// или растягивать
 ic(ans)
