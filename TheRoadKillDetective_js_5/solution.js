@@ -35,30 +35,33 @@ var roadKill = function(photo) {
     }
     const victim = createDict(photo)
     ic(victim)
+    let ans = []
     for (let i = 0; i < ANIMALS.length; i++) {
         const animal = createDict(ANIMALS[i])
-        let ans = ''
         // ic(animal)
+        let resultOfCompare = []
         for (const animalKey in animal) {
             // ic(animalKey)
-            if (animalKey in victim ) {
+            if (animalKey in victim) {
                 // ans += animalKey.repeat(animal[animalKey])
                 // ic(animalKey)
+                resultOfCompare.push(animalKey.repeat(animal[animalKey]))
             }
         }
         // return ans
+        ans.push(resultOfCompare)
     }
-    // return '??'
-    return [victim, createDict('rabbit')]
+    return ans
+    // return [victim, createDict('rabbit')]
 }
 
-// ic(roadKill("====rraabbiitt=="))
-const [victim, animal] =  roadKill("====rraabbiitt==")
-ic(animal)
-let ans = []
-for (const animalKey in animal) {
-    if (animalKey in victim) {
-        ans.push(animalKey.repeat(animal[animalKey]))
-    }
-}
-ic(ans.join(''))
+ic(roadKill("====rraabbiitt=="))
+// const [victim, animal] =  roadKill("====rraabbiitt==")
+// ic(animal)
+// let ans = []
+// for (const animalKey in animal) {
+//     if (animalKey in victim) {
+//         ans.push(animalKey.repeat(animal[animalKey]))
+//     }
+// }
+// ic(ans.join(''))
