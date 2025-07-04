@@ -37,12 +37,28 @@ var roadKill = function(photo) {
     ic(victim)
     for (let i = 0; i < ANIMALS.length; i++) {
         const animal = createDict(ANIMALS[i])
+        let ans = ''
         // ic(animal)
         for (const animalKey in animal) {
-            ic(animalKey)
+            // ic(animalKey)
+            if (animalKey in victim ) {
+                // ans += animalKey.repeat(animal[animalKey])
+                // ic(animalKey)
+            }
         }
+        // return ans
     }
-    return '??'
+    // return '??'
+    return [victim, createDict('rabbit')]
 }
 
-ic(roadKill("====rraabbiitt=="))
+// ic(roadKill("====rraabbiitt=="))
+const [victim, animal] =  roadKill("====rraabbiitt==")
+ic(animal)
+let ans = []
+for (const animalKey in animal) {
+    if (animalKey in victim) {
+        ans.push(animalKey.repeat(animal[animalKey]))
+    }
+}
+ic(ans.join(''))
