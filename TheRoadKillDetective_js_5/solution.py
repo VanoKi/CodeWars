@@ -11,6 +11,16 @@ ANIMALS = ['aardvark', 'alligator', 'armadillo', 'antelope', 'baboon', 'bear', '
 
 
 def road_kill(photo):
-    return {i for i in photo if i.isalpha()}
+    # return {i for i in photo if i.isalpha()}
+    def create_dict(sequence):
+        result = {}
+        for i in sequence:
+            if i.isalpha():
+                if i in result:
+                    result[i] += 1
+                else:
+                    result[i] = 1
+        return result
+    return create_dict(photo)
 
 print(road_kill("==========h===yyyyyy===eeee=n==a========"))
