@@ -15,17 +15,25 @@ def road_kill(photo):
     victim = ''.join(i for i in photo if i.isalpha())
     reversed_victim = victim[::-1]
 
-    def is_subsequence(word, sequence):
-        it = iter(sequence)
-        return all(char in it for char in word)
+    # def is_subsequence(word, sequence):
+    #     it = iter(sequence)
+    #     return all(char in it for char in word)
 
-    for animal in ANIMALS:
-        if is_subsequence(animal, victim) or is_subsequence(animal, reversed_victim):
-            return animal
 
-    return '??'
+    # for animal in ANIMALS:
+    #     if is_subsequence(animal, victim) or is_subsequence(animal, reversed_victim):
+    #         return animal
 
-ic(road_kill("=====k====r=a=vvvv==d=d=d=d=r==a=a======="))
-ic(road_kill("===       ===snake========="))
+    # return '??'
+    animal = 'alligator'
+    def dict_seq(seq):
+        return {i:seq.count(i) for i in seq}
+    dict_victim = dict_seq(victim)
+    dict_animal = dict_seq(animal)
+
+    return dict_victim, dict_animal
+
+# ic(road_kill("=====k====r=a=vvvv==d=d=d=d=r==a=a======="))
+# ic(road_kill("===       ===snake========="))
 ic(road_kill("==a======a=a=a=lig===a=t====o=r=r=r=r=="))
 
