@@ -12,30 +12,25 @@ ANIMALS = ['aardvark', 'alligator', 'armadillo', 'antelope', 'baboon', 'bear', '
 
 
 def road_kill(photo):
-    # return {i for i in photo if i.isalpha()}
     def create_dict(sequence):
-        result = {}
+        result = []
         for i in sequence:
-            if i.isalpha():
-                if i in result:
-                    result[i] += 1
-                else:
-                    result[i] = 1
-        return result
+            if i.isalpha() and i not in result:
+                result.append(i)
+        return ''.join(result)
 
-    victim = ''.join(create_dict(photo).keys())
-    reversed_victim = ''.join(list(reversed(victim)))
-    for i in ANIMALS:
-        animal = ''.join(create_dict(i).keys())
-        if animal == victim or animal == reversed_victim:
-            return i
+    # victim = create_dict(photo)
+    # ic(victim)
+    # reversed_victim = ''.join(list(reversed(victim)))
+    # ic(reversed_victim)
+    # for i in ANIMALS:
+    #     animal = ''.join(create_dict(i).keys())
+    #     if animal == victim or animal == reversed_victim:
+    #         return i
 
+    return create_dict(photo)
 
-    return '??'
+# print(road_kill("=====k====r=a=vvvv==d=d=d=d=r==a=a======="))
+# print(road_kill("===       ===snake========="))
+print(road_kill("==a======a=a=a=lig===a=t====o=r=r=r=r=="))
 
-print(road_kill("==========h===yyyyyy===eeee=n==a========"))
-# prepare_victim = road_kill("==========h===yyyyyy===eeee=n==a========")
-animal = 'hyena'
-# for i in prepare_victim:
-#     ic(i*prepare_victim[i])
-# ic(''.join(prepare_victim.keys()) == animal)
