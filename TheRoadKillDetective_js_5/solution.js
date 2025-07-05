@@ -75,7 +75,7 @@ for (let i = 0; i < ANIMALS.length; i++) {
     const animal = victim(ANIMALS[i])
     for (const animalKey in animal) {
         if (animalKey in rabbit) {
-            ans.push(animalKey.repeat(animal[animalKey]))
+            ic(rabbit[animalKey] - animal[animalKey])
         }
     }
 }
