@@ -12,25 +12,20 @@ ANIMALS = ['aardvark', 'alligator', 'armadillo', 'antelope', 'baboon', 'bear', '
 
 
 def road_kill(photo):
-    def create_dict(sequence):
-        result = []
-        for i in sequence:
-            if i.isalpha() and i not in result:
-                result.append(i)
-        return ''.join(result)
+    victim = ''.join(i for i in photo if i.isalpha())
+    reversed_victim = victim[::-1]
 
-    # victim = create_dict(photo)
-    # ic(victim)
-    # reversed_victim = ''.join(list(reversed(victim)))
-    # ic(reversed_victim)
-    # for i in ANIMALS:
-    #     animal = ''.join(create_dict(i).keys())
-    #     if animal == victim or animal == reversed_victim:
-    #         return i
+    def is_subsequence(word, sequence):
+        it = iter(sequence)
+        return all(char in it for char in word)
 
-    return create_dict(photo)
+    for animal in ANIMALS:
+        if is_subsequence(animal, victim) or is_subsequence(animal, reversed_victim):
+            return animal
 
-# print(road_kill("=====k====r=a=vvvv==d=d=d=d=r==a=a======="))
-# print(road_kill("===       ===snake========="))
-print(road_kill("==a======a=a=a=lig===a=t====o=r=r=r=r=="))
+    return '??'
+
+ic(road_kill("=====k====r=a=vvvv==d=d=d=d=r==a=a======="))
+ic(road_kill("===       ===snake========="))
+ic(road_kill("==a======a=a=a=lig===a=t====o=r=r=r=r=="))
 
