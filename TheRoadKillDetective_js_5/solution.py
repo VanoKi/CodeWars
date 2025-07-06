@@ -32,15 +32,15 @@ def road_kill(photo):
                 if index == -1:
                     matched = False
                     break
-                temp_photo = temp_photo[index + 1]
+                temp_photo = temp_photo[index + 1:]
 
             if matched:
                 return animal
 
-    return compare(clean_photo)
+    return compare(clean_photo) or compare(reversed_photo) or '??'
 
-# ic(road_kill("=====k====r=a=vvvv==d=d=d=d=r==a=a======="))
-# ic(road_kill("===       ===snake========="))
+ic(road_kill("=====k====r=a=vvvv==d=d=d=d=r==a=a======="))
+ic(road_kill("===       ===snake========="))
 ic(road_kill("==a======a=a=a=lig===a=t====o=r=r=r=r=="))
 
 # def is_subsequence(word, sequence):
