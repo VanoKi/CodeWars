@@ -15,24 +15,28 @@ def road_kill(photo):
     if ' ' in photo:
         return '??'
     else:
+        cleaned_photo = [i for i in photo if i.isalpha()]
         def create_dict(sequence):
-            result = {}
-            zipped = ''
-            for i in sequence:
-                if i in result:
-                    result[i] += 1
+            return {i:sequence.count(i) for i in sequence}
+
+        def zipped(seq):
+            result = ''
+            for i in seq:
+                if result and result[-1] == i:
+                    result += ''
                 else:
-                    if i.isalpha():
-                        result[i] = 1
-                        zipped += i
-            return result, zipped
-        result = []
+                    result += i
+            return result
+
         for i in ANIMALS:
-            animal_dict, animal_zipped = create_dict(i)
-            victim_dict, victim_zipped = create_dict(photo)
+            animal_zipped = zipped(i)
+            victim_zipped = zipped(cleaned_photo)
+            # ic(animal_zipped, victim_zipped)
             if animal_zipped == victim_zipped or victim_zipped[::-1] == animal_zipped:
                 # ic(victim_zipped, animal_zipped, victim_zipped[::-1])
                 # ic(victim_dict, animal_dict)
+                animal_dict = create_dict(i)
+                victim_dict = create_dict(cleaned_photo)
                 for j in animal_dict:
                     # ic(j , victim_dict[j], animal_dict[j])
                     # ic(victim_dict[j] - animal_dict[j])
@@ -42,7 +46,6 @@ def road_kill(photo):
                         return i
 
     return '??'
-# change check !!!!!!!
 ic(road_kill("=====k====r=a=vvvv==d=d=d=d=r==a=a======="))
 ic(road_kill("===       ===snake========="))
 ic(road_kill("==a======a=a=a=lig===a=t====o=r=r=r=r=="))
