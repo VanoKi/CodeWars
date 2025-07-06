@@ -12,28 +12,42 @@ ANIMALS = ['aardvark', 'alligator', 'armadillo', 'antelope', 'baboon', 'bear', '
 
 
 def road_kill(photo):
-    victim = ''.join(i for i in photo if i.isalpha())
-    reversed_victim = victim[::-1]
 
-    # def is_subsequence(word, sequence):
-    #     it = iter(sequence)
-    #     return all(char in it for char in word)
+    clean_photo  = ''
+    for i in photo:
+        if i.isalpha():
+            clean_photo += i
+        else:
+            if i == ' ':
+                return '??'
+    reversed_photo = clean_photo[::-1]
 
+    def compare(cleaned_photo):
+        for animal in ANIMALS:
+            temp_photo = clean_photo
+            matched = True
 
-    # for animal in ANIMALS:
-    #     if is_subsequence(animal, victim) or is_subsequence(animal, reversed_victim):
-    #         return animal
+            for letter in animal:
+                index = temp_photo.find(letter)
+                if index == -1:
+                    matched = False
+                    break
+                temp_photo = temp_photo[index + 1]
 
-    # return '??'
-    animal = 'alligator'
-    def dict_seq(seq):
-        return {i:seq.count(i) for i in seq}
-    dict_victim = dict_seq(victim)
-    dict_animal = dict_seq(animal)
+            if matched:
+                return animal
 
-    return dict_victim, dict_animal
+    return compare(clean_photo)
 
 # ic(road_kill("=====k====r=a=vvvv==d=d=d=d=r==a=a======="))
 # ic(road_kill("===       ===snake========="))
 ic(road_kill("==a======a=a=a=lig===a=t====o=r=r=r=r=="))
+
+# def is_subsequence(word, sequence):
+#     it = iter(sequence)
+#     for char in word:
+#         if char not in it:
+#             return False
+#     return True
+#
 
