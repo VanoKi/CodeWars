@@ -8,13 +8,14 @@ function nameFunction (params) {
                 word += param
             } else {
                 result.push(word)
-                word = ''
+                word = param
             }
         }
         else {
-            word += param
+            word = param
         }
     }
+    if (word) result.push(word)
     return result
 }
 ic(nameFunction("ccccoodeffffiiighhhhhhhhhhttttttts"))
