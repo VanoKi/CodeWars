@@ -1,10 +1,10 @@
 const ic = require('node-icecream')()
-function nameFunction (params) {
-    params = params + ' '
+function repeatAdjacent (s) {
+    s = s + ' '
     let answe = 0
     let result = []
     let word = ''
-    for (const param of params) {
+    for (const param of s) {
         if (word) {
             if (word.at(-1) === param) {
                 word += param
@@ -26,10 +26,6 @@ function nameFunction (params) {
     }
     if (word) result.push(word)
     return answe
-    // let answer = []
-    // for (const resultElement of result) {
-    //
-    // }
 }
-ic(nameFunction("ccccoodeffffiiighhhhhhhhhhttttttts"))
+ic(repeatAdjacent("gztxxxxxggggggggggggsssssssbbbbbeeeeeeehhhmmmmmmmitttttttlllllhkppppp"))
 
