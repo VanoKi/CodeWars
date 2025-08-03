@@ -15,6 +15,8 @@ function repeatAdjacent (s) {
                     if (result.length >= 2) {
                         answe += 1
                         result = []
+                    }else {
+                        result = []
                     }
                 }
                 word = param
@@ -27,5 +29,5 @@ function repeatAdjacent (s) {
     if (word) result.push(word)
     return answe
 }
-ic(repeatAdjacent("gztxxxxxggggggggggggsssssssbbbbbeeeeeeehhhmmmmmmmitttttttlllllhkppppp"))
+ic(repeatAdjacent("soooooldieeeeeer"))
 
