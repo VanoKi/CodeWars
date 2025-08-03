@@ -1,7 +1,8 @@
 const ic = require('node-icecream')()
 function nameFunction (params) {
+    params = params + ' '
     let answe = 0
-    const result = []
+    let result = []
     let word = ''
     for (const param of params) {
         if (word) {
@@ -10,6 +11,11 @@ function nameFunction (params) {
             } else {
                 if (word.length >= 2) {
                     result.push(word)
+                } else {
+                    if (result.length >= 2) {
+                        answe += 1
+                        result = []
+                    }
                 }
                 word = param
             }
@@ -19,7 +25,7 @@ function nameFunction (params) {
         }
     }
     if (word) result.push(word)
-    return result
+    return answe
     // let answer = []
     // for (const resultElement of result) {
     //
