@@ -1,6 +1,19 @@
 const ic = require('node-icecream')()
 function nameFunction (params) {
-  //
+    const result = []
+    const word = ''
+    for (const param of params) {
+        if (word) {
+            if (word.at(-1) === param) {
+                word += param
+            } else {
+                result.push(word)
+                word = ''
+            }
+        } else {
+            word += param
+        }
+    }
 }
-ic(nameFunction())
+ic(nameFunction("ccccoodeffffiiighhhhhhhhhhttttttts"))
 
