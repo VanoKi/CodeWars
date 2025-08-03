@@ -1,5 +1,6 @@
 const ic = require('node-icecream')()
 function nameFunction (params) {
+    let answe = 0
     const result = []
     let word = ''
     for (const param of params) {
@@ -7,7 +8,9 @@ function nameFunction (params) {
             if (word.at(-1) === param) {
                 word += param
             } else {
-                result.push(word)
+                if (word.length >= 2) {
+                    result.push(word)
+                }
                 word = param
             }
         }
@@ -17,6 +20,10 @@ function nameFunction (params) {
     }
     if (word) result.push(word)
     return result
+    // let answer = []
+    // for (const resultElement of result) {
+    //
+    // }
 }
 ic(nameFunction("ccccoodeffffiiighhhhhhhhhhttttttts"))
 
