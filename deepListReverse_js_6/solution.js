@@ -9,7 +9,7 @@ function deepReverse (params) {
             result.push(item)
         }
     }
-    return result
+    return result.reverse()
 }
 ic(deepReverse([[1,2],[3,4]]))
 
