@@ -11,5 +11,5 @@ function deepReverse (params) {
     }
     return result.reverse()
 }
-ic(deepReverse([[1,2],[3,4]]))
+ic(deepReverse([[50,51,[52,53]],[[54,55],56,57]]))
 
