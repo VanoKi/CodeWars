@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "node-icecream": "^1.0.0"
+    "bun": "^1.2.19",
+    "node-icecream": "^1.0.0",
+    "test": "^3.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",
