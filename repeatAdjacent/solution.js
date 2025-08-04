@@ -1,12 +1,16 @@
 export function repeatAdjacent (s) {
-    const ans = []
-    for (let i = 0; i < s.length; i++) {
-        if(s[i] !== s[i+1] && s[i+1] !== s[i+2]) {
-            ans.push(s.slice(0, i + 2))
-            s = s.slice(i + 2)
+    let ans = []
+    let word = ''
+    for (const i of s) {
+        if (word && word.at(-1) === i) {
+            word += i
+        }else {
+            if (word.length >= 2){
+                ans.push(word)
+                word = ''
+            }
         }
     }
-    ans.push(s)
-    return ans.length
+    console.log(ans)
 }
-console.log(repeatAdjacent("ccccoodeffffiiighhhhhhhhhhttttttts"))
+console.log(repeatAdjacent("soooooldieeeeeer"))
