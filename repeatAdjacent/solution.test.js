@@ -4,6 +4,7 @@ import {describe} from "test";
 
 function doTest(s, expected) {
     const actual = repeatAdjacent(s)
+    console.log(`Testing: "${s}" => ${actual}, expected ${expected}`)
     expect(actual).toBe(expected)
 }
 
