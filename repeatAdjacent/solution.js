@@ -14,10 +14,10 @@ export function repeatAdjacent (s) {
             if (chain >=2) ans++
             chain = 0
         }
-        word = chain
+        word = char
     }
     if (word.length >= 2) chain++
     if (chain >= 2) ans++
     return ans
 }
-console.log(repeatAdjacent("soooooldieeeeeer"))
+console.log(repeatAdjacent("ccccoodeffffiiighhhhhhhhhhttttttts"))
