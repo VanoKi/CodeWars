@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "bun": "^1.2.19",
     "node-icecream": "^1.0.0",

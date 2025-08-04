@@ -15,4 +15,4 @@ export function repeatAdjacent (s) {
     return ans
 }
 // ic(repeatAdjacent("wwwwaaaarrioooorrrrr"))
-
+console.log('repeatAdjacent')
