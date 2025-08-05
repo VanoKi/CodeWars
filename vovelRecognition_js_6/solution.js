@@ -1,8 +1,9 @@
-const vovels = 'aeiouAEIOU'
-function nameFunction (s) {
+
+function vowelRecognition (s) {
+  const vovels = 'aeiouAEIOU'
   const n = s.length
   let result = 0
-  for (let i = 0; i < n -1; i++) {
+  for (let i = 0; i < n; i++) {
     const char = s[i]
     if (vovels.includes(char)) {
       const startCount = i + 1
@@ -13,5 +14,5 @@ function nameFunction (s) {
   }
   return result
 }
-console.log(nameFunction("baceb"))
+console.log(vowelRecognition("aeiouAEIOU"))
 
