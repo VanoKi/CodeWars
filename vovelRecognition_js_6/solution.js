@@ -1,11 +1,17 @@
 const vovels = 'aeiouAEIOU'
-ceAll(',', '')
-function nameFunction (params) {
-  for (let i = 0; i < params.length; i++) {
-    console.log(params[i], params.slice(0, i))
+function nameFunction (s) {
+  const n = s.length
+  let result = 0
+  for (let i = 0; i < n -1; i++) {
+    const char = s[i]
+    if (vovels.includes(char)) {
+      const startCount = i + 1
+      const endCount = n - i
+      const contribution = startCount * endCount
+      result += contribution
+    }
   }
-  return params
+  return result
 }
-// console.log(nameFunction("baceb"))
-console.log(vovels)
+console.log(nameFunction("baceb"))
 
