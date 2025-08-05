@@ -10,9 +10,9 @@ fi
 mkdir -p "$BRANCH_NAME"
 touch "$BRANCH_NAME/details.md" && echo "Created details.md"
 touch "$BRANCH_NAME/solution.js" && echo "Created solution.js"
-echo "const ic = require('node-icecream')()
+echo "
 function nameFunction (params) {
-  //
+  return params
 }
-ic(nameFunction())
+console.log(nameFunction())
 " > "$BRANCH_NAME/solution.js"
