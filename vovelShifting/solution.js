@@ -1,5 +1,5 @@
 
-function nameFunction (s, n) {
+function nameFunction (s, num) {
   const vowels = "aeiouAEIOU"
   let vowelsInString = []
   let vowelsIndex = []
@@ -9,9 +9,8 @@ function nameFunction (s, n) {
       vowelsIndex.push(i)
     }
   }
-  const num = vowelsInString.length % n
-  const shifted = vowelsInString.slice(-num).concat(vowelsInString.slice(0, -num))
-  return [vowelsInString, vowelsIndex, n, shifted]
+  const n = num % vowelsInString.length
+  return [vowelsInString, vowelsIndex, n, ]
 }
 
 console.log(nameFunction("This is a string", 1))
