@@ -9,10 +9,16 @@ function nameFunction (s, num) {
       vowelsIndex.push(i)
     }
   }
+  console.log(vowelsInString)
+  console.log(vowelsIndex)
   const n = num % vowelsInString.length
   const shiftedVowels = vowelsInString.slice(n).concat(vowelsInString.slice(0, n))
-  return [vowelsInString, vowelsIndex, n, shiftedVowels]
+  let answer = Array.from(s)
+  for (let i = 0; i < vowelsIndex.length; i++) {
+    answer.splice(vowelsIndex[i], 1, shiftedVowels[i])
+  }
+  return answer.join('')
 }
 
-console.log(nameFunction("This is a string", 1))
+console.log(nameFunction("This is a test!", 1))
 
