@@ -1,6 +1,7 @@
 const log = console.log.bind(console)
 
-function nameFunction (s, num) {
+function vowelShift (s, num) {
+  if (!s) return s
   const vowels = "aeiouAEIOU"
   let vowelsInString = []
   let vowelsIndex = []
@@ -10,8 +11,8 @@ function nameFunction (s, num) {
       vowelsIndex.push(i)
     }
   }
-  // console.log(vowelsInString)
-  // console.log(vowelsIndex)
+  log(vowelsInString)
+  // log(vowelsIndex)
   let n
   let shiftedVowels
   if (num > 0) {
@@ -29,11 +30,28 @@ function nameFunction (s, num) {
   return answer.join('')
 }
 
-log("This is a test!")
-log(nameFunction("This is a test!", 3))
-log(nameFunction("This is a test!", 3));  // "This as e tist!"
+// log("This as e tist!")
+// log(vowelShift("This is a test!", 1))
+// log(vowelShift("This is a test!", 3));  // "This as e tist!"
+// log(vowelShift("This is a test!", 0));  // "This as e tist!"
+// log(vowelShift(" ", 0));  // "This as e tist!"
 
-log(nameFunction("This is a test!", 1));  // "Thes is i tast!"
-log(nameFunction("This is a test!", -1)); // "Thas os e tist!"
-log(nameFunction("aeiou", 2));            // "ouaei"
-log(nameFunction("aeiou", -2));           // "iouae"
+// log(nameFunction("This is a test!", 1));  // "Thes is i tast!"
+// log(nameFunction("This is a test!", -1)); // "Thas os e tist!"
+// log(nameFunction("aeiou", 2));            // "ouaei"
+// log(nameFunction("aeiou", -2));           // "iouae"
+function shift(num) {
+  const arr = [1, 2, 3, 4]
+  let n
+  if (num > 0) {
+    n = -(num % arr.length)
+    console.log(n)
+    return arr.slice(n).concat(arr.slice(0 ,n))
+  } else {
+    n = num % arr.length
+    console.log(n)
+    log(arr.slice(-1))
+    return arr.slice(n).concat(arr.slice(0, n))
+  }
+}
+log(shift(1))
