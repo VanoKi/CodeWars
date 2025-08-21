@@ -4,14 +4,13 @@ function sortTheInnerContent(words:string):string
   let ans = ''
   for (const word of words.split(' ')) {
     // console.log(word)
-    if (word.length <= 3) {
-      ans += (word + ' ')
-    } else {
-      ans += (Array.from(word).reverse().join('') + ' ')
-    }
+    let core = Array.from(word.slice(1, -1)).sort((a, b) => b - a).join('')
+    console.log(core)
+    // ans += (word.slice(0, 1) +  core + word.slice(word.length - 1) + ' ')
   }
   // words.split(' ').forEach(word => console.log(word))
   return ans
 }
 
-console.log(sortTheInnerContent("sort the inner content in descending order"))
+// console.log(sortTheInnerContent("sort the inner content in descending order"))
+console.log(Array.from('abcd').sort((a, b) => b.localeCompare(a)))
