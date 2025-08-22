@@ -1,14 +1,7 @@
 
 function nameFunction (n:number) {
-  // return n
-  // const arr = Array(n).fill(Array(n).fill(0))
-  // for (let i = 0; i < arr.length; i++) {
-  //   console.log(arr[i])
-  // }
-  // return arr
   let arr = []
   for (let i = 0; i < n; i++) {
-    // console.log()
     let temp = []
     for (let j = 1; j <= n; j++) {
       // console.log(i)
@@ -22,8 +15,7 @@ function nameFunction (n:number) {
   }
   return arr
 }
-// console.log(nameFunction(5))
-let answer = nameFunction(4)
+let answer = nameFunction(5)
 for (let i = 0; i < answer.length; i++) {
   console.log(answer[i])
 }
