@@ -1,6 +1,6 @@
 
-function nameFunction (params) {
-  return params
+function archersReady (archers) {
+  return archers.every(archer => archer >= 5)
 }
-console.log(nameFunction())
+console.log(archersReady([]))
 
