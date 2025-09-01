@@ -1,5 +1,5 @@
 
-function nameFunction (source, target) {
+function transform (source, target) {
   const ans = [source]
   const word = [...source]
   for (let i = 0; i < source.length; i++) {
@@ -13,7 +13,7 @@ function nameFunction (source, target) {
   }
   return ans
 }
-console.log(nameFunction('kata','math'))
+console.log(transform('kata','math'))
 // let word = [...'see']
 // let newWord = word.splice(1, 1, 'a')
 // console.log(word, newWord)
