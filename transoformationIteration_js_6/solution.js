@@ -4,14 +4,16 @@ function nameFunction (source, target) {
   const word = [...source]
   for (let i = 0; i < source.length; i++) {
     // console.log(ans.splice(i, 1, target[i]))
-    console.log(source[i], target[i])
-    word.splice(i, 1, target[i])
-    console.log(word)
-    ans.push(word.join(''))
+    if (source[i] === target[i]) {
+      continue
+    } else {
+      word.splice(i, 1, target[i])
+      ans.push(word.join(''))
+    }
   }
   return ans
 }
-console.log(nameFunction('car','see'))
+console.log(nameFunction('kata','math'))
 // let word = [...'see']
 // let newWord = word.splice(1, 1, 'a')
 // console.log(word, newWord)
