@@ -1,8 +1,8 @@
 
 function nameFunction (source, target) {
-  const ans = []
+  const ans = [...source]
   for (let i = 0; i < source.length; i++) {
-    console.log([...source].splice(i, 1, target[i]))
+    console.log(ans.splice(i, 1, target[i]))
   }
   return ans
 }
