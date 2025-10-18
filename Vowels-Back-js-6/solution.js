@@ -7,7 +7,7 @@ const vowelsBack = (str) => {
         let shift = 0
         if ('co'.includes(char)) {
             shift = -1
-        } else if ('auei'.includes(char)) {
+        } else if ('aui'.includes(char)) {
             shift = -5
         } else if ('d'.includes(char)) {
             shift = -3
@@ -27,4 +27,4 @@ const vowelsBack = (str) => {
     return result
 }
 
-console.log(vowelsBack('codewars'))
+console.log(vowelsBack("testcase"))
