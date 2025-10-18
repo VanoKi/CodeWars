@@ -1,5 +1,5 @@
 
-function nameFunction (str, arr) {
+function capitalize (str, arr) {
   let result = ''
   for (let i = 0; i < str.length; i++) {
     if (arr.includes(i)) {
@@ -10,5 +10,5 @@ function nameFunction (str, arr) {
   }
   return result
 }
-console.log(nameFunction("abcdef", [1,2,5] ))
+console.log(nameFunction("abcdef", [1,2,5,100] ))
 
