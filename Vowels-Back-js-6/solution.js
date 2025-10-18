@@ -16,7 +16,8 @@ const vowelsBack = (str) => {
         } else {
             shift = 9
         }
-        return abs[Math.abs((index + shift) % 26)]
+        let indexShift = index + shift
+        return abs[indexShift > 0 ? indexShift : indexShift += 26]
     }
     let result = ''
     for (let i = 0; i < str.length; i++) {
