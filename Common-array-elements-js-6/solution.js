@@ -19,7 +19,9 @@ function common(a, b, c) {
       if(dictKey in firstDict) commonElem[dictKey] = firstDict[dictKey]
     }
   }
-  return commonElem
+  return Object.entries(commonElem).reduce((acc, elem) => {
+    acc + (Number(elem[0]) * elem[1])
+  }, 0)
 }
 
 console.log(common( [1,2,2,3],[5,3,2,2],[7,3,2,2]))
