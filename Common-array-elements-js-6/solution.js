@@ -10,15 +10,19 @@ function common(a, b, c) {
   }
 
   const dictionaries = Array.from(arguments).map(elem => dictForElem(elem))
-  console.log(dictionaries)
+  // console.log(dictionaries)
   const bigDic = {}
   for (const dictionary of dictionaries) {
     // console.log(dictionary)
-    for (const dictionaryKey in dictionary) {
-      // console.log(dictionaryKey)
+    for (const key in dictionary) {
+      console.log(key)
       // console.log(dictionary[dictionaryKey])
+      if (bigDic[key]) bigDic[key] += 1
+      else bigDic[key] = 1
     }
   }
+
+  console.log(Object.entries(bigDic).filter(e => e[1] >= dictionaries.length))
 
 }
 
