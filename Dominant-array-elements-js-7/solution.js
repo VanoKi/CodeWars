@@ -1,13 +1,5 @@
 
 function nameFunction (params) {
-  const positive = []
-  const negative = []
-  for (const param of params.sort((a, b) => a - b)) {
-    if (param > 0) positive.push(param)
-    else negative.push(param)
-  }
-  // return [negative, positive]
-  // return params.reduce((sum, e) => sum + e)
   for (const param of params) {
     if(params.includes(-(param))) continue
     else return param
