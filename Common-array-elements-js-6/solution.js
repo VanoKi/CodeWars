@@ -9,18 +9,12 @@ function common(a, b, c) {
   }
 
   const dictionaries = Array.from(arguments).map(dictForElem)
-  const bigDic = {}
-  for (const dictionary of dictionaries) {
-    for (const key in dictionary) {
-      if (bigDic[key]) bigDic[key] += 1
-      else bigDic[key] = 1
-    }
-  }
 
-  const commonKeys = Object.entries(bigDic).filter(e => e[1] >= dictionaries.length).map(e => e[0])
+  const commonKeys = Object.keys(dictionaries[0]).filter(key => dictionaries.every(d => key in d))
 
-  return commonKeys.reduce( (sum, elem) => {
-    return sum + (dictionaries[0][elem] * Number(elem))
+  return commonKeys.reduce((sum, key) => {
+      const minCount = Math.min(...dictionaries.map(d => d[key]))
+      return sum + minCount * Number(key)
   }, 0)
 }
 
