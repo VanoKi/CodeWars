@@ -3,11 +3,9 @@ function nameFunction (params) {
   const dupl = []
   const stack = []
   for (const p of params) {
-    console.log(typeof p)
-    if (typeof p === "number") {
-      console.log(p)
-      if (stack.includes(p)) dupl.push(p)
-      else stack.includes(p)
+    if (typeof p == "number") {
+      if (stack.includes(p) && !dupl.includes(p)) dupl.push(p)
+      else stack.push(p)
     }
   }
   return dupl
