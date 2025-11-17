@@ -1,11 +1,13 @@
 
 function nameFunction (params) {
-  const dict = {}
+  const ans = []
+  const count = []
   for (const param of params) {
-    if (dict[param]) dict[param].push(param)
-    else dict[param] = [param]
+    if (count.includes(param)) ans.push([param])
+    else count.push(param)
   }
-  return Object.values(dict)
+  // return ans
+  return params.map(e => [e])
 }
 console.log(nameFunction([3, 2, 6, 2, 1, 3]))
 
