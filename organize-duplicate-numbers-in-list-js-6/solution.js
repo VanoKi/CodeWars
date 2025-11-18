@@ -1,15 +1,17 @@
 
 function nameFunction (params) {
-  const ans = []
-  for (const param of params) {
-    if (ans.includes(ans[param])){
-      console.log(ans.includes(ans[param]))
-      console.log(ans.indexOf(ans[param]))
-      ans[param].push(param)
+  const dict = {}
+    const sequence = []
+    for (const param of params) {
+        if (dict[param]) {
+            dict[param].push(param)
+        }
+        else {
+            dict[param] = [param]
+            sequence.push(param)
+        }
     }
-    else ans.push([param])
-  }
-  return ans
+    return sequence.map(e => dict[e])
 }
 console.log(nameFunction([3, 2, 6, 2, 1, 3]))
 
