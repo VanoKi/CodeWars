@@ -1,12 +1,16 @@
 
 function nameFunction (params) {
-  let seems = ''
-  let duplicates = ''
+  const seems = []
+  let duplicates = []
   for (const param of params) {
-    if (seems.includes(param)) duplicates += param
-    else seems += param
+    let index = seems.indexOf(param)
+    if (index !== -1) {
+      duplicates += (seems[index] + param)
+    } else {
+      seems.push(param)
+    }
   }
   return [seems, duplicates]
 }
 console.log(nameFunction( "abccdefee"))
-
+// console.log("abccdefee".indexOf('z'))
