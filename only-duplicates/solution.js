@@ -2,9 +2,13 @@
 function nameFunction (params) {
   const dict = {}
   for (const param of params) {
-    if (dict[param]) dict[param] += param
-    else dict[param] = param
+    if (dict[param]) dict[param] += 1
+    else dict[param] = 1
   }
-  return dict
+  let ans = ''
+  for (const param of params) {
+    if (dict[param] > 1) ans += param
+  }
+  return ans
 }
-console.log(nameFunction( "abccdefee"))
+console.log(nameFunction( "colloquial"))
