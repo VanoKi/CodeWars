@@ -7,14 +7,11 @@ function nameFunction (params) {
     console.log(param)
     for (const paramElement of param) {
       if (numbers.includes(paramElement)) {
-        if (minElem < Number(paramElement)) {
-          ans.push(param)
-          minElem = Number(paramElement)
-        }
+        ans[Number(paramElement)] = param
       }
     }
   }
-  return ans
+  return ans.slice(1).join(' ')
 }
 console.log(nameFunction("is2 Thi1s T4est 3a"))
 
