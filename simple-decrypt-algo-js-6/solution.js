@@ -1,15 +1,17 @@
-
-function nameFunction (params) {
-
-  const createDict = () => {
+function nameFunction(params) {
     const dict = {}
     for (let i = 97; i < 123; i++) {
-      console.log(String.fromCharCode(i))
+        dict[String.fromCharCode(i)] = 0
     }
-    return dict
-  }
-  return createDict()
+    for (let i = 0; i < params.length; i++) {
+        let key = params[i]
+        if (key in dict) {
+            dict[key] += 1
+        }
+    }
+    return Object.values(dict).join('')
 }
+
 console.log(nameFunction('$aaaa#bbb*cc^fff!z\''))
 
 console.log('a'.charCodeAt(0))
