@@ -12,8 +12,7 @@ function nameFunction (params) {
     }
     return ans
   }
-  // return Object.entries(dict).sort( (a, b) =>  b[1] - a[1]).map(e => +e[0])
-  return createArray('3', 3)
+  return Object.entries(dict).sort( (a, b) =>  b[1] - a[1]).map(e => createArray(e[0], e[1])).flat()
 }
 console.log(nameFunction([2,3,5,3,7,9,5,3,7]))
 
