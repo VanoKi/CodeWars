@@ -17,7 +17,13 @@ function nameFunction (params) {
       toSort.push(elem)
     }
   }
-  return toSort.sort()
+  return toSort.sort((x, y) => {
+    let lx = x.toLowerCase()
+    let ly = y.toLowerCase()
+    if (lx < ly) return -1
+    if (lx > ly) return 1
+    return 0
+  })
 }
 console.log(nameFunction("cCBbAa"))
 
