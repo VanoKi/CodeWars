@@ -7,7 +7,6 @@ function nameFunction (params) {
   for (let i = 65; i < 91; i++) {
     abc += String.fromCharCode(i)
   }
-  // return abc
   const ans = []
   const toSort = []
   for (const elem of params) {
@@ -17,13 +16,19 @@ function nameFunction (params) {
       toSort.push(elem)
     }
   }
-  return toSort.sort((x, y) => {
+  const sorted = toSort.sort((x, y) => {
     let lx = x.toLowerCase()
     let ly = y.toLowerCase()
     if (lx < ly) return -1
     if (lx > ly) return 1
     return 0
   })
+  for (let i = 0; i < ans.length; i++) {
+    if (ans[i] == '') {
+      ans[i] = sorted.shift()
+    }
+  }
+  return ans
 }
 console.log(nameFunction("cCBbAa"))
 
