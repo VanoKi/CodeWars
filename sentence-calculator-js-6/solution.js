@@ -15,6 +15,13 @@ function nameFunction (params) {
     digit[String(i)] = i
   }
   const dict = {...lower, ...upper, ...digit}
+  let ans = 0
+  for (let i = 0; i < params.length; i++) {
+    let elem = params[i]
+    if (elem in dict) ans += dict[elem]
+    else continue
+  }
+  return ans
 }
-console.log(nameFunction("I Love You"))
+console.log(nameFunction("ARE YOU HUNGRY?"))
 
