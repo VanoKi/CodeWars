@@ -1,10 +1,17 @@
 
 function nameFunction (params) {
-  const stack = []
-  let word = []
-  const regex = /(\d)\(([^()]*)\)/g
-  let finded = regex.exec(params)
-  return  finded[2].repeat(+finded[1])
+  const regex = /(\d*)\(([^()]*)\)/g
+  const myReplace = () => {
+    let finded = regex.exec(params)
+    // console.log(params)
+    // console.log(finded)
+    return  (finded[2] || '').repeat(+finded[1]  || 1)
+  }
+  while (params.includes('(')) {
+    // console.log(params)
+    params = params.replace(regex, myReplace())
+  }
+  return params
 }
-console.log(nameFunction("2(a3(b))"))
+console.log(nameFunction('3(b(2(c)))'))
 
