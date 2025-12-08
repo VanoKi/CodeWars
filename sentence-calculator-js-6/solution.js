@@ -10,11 +10,11 @@ function nameFunction (params) {
     upper[String.fromCharCode(i).toUpperCase()] = upperCount
     upperCount += 2
   }
-  return upper
+  const digit = {}
+  for (let i = 0; i < 10; i++) {
+    digit[String(i)] = i
+  }
+  const dict = {...lower, ...upper, ...digit}
 }
 console.log(nameFunction("I Love You"))
-console.log('A'.charCodeAt(0))
-console.log('Z'.charCodeAt(0))
-console.log('0'.charCodeAt(0))
-console.log('9'.charCodeAt(0))
 
