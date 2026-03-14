@@ -1,9 +1,19 @@
-function nameFunction(params) {
-  const arr = Array.from('' + params);
-  const sum = arr[arr.length - 1];
-  for (let i = arr.length - 1; i >= 0; i--) {
-    console.log(arr[i]);
+function nameFunction(num) {
+  const arr = Array.from(String(num), Number);
+  let sum = arr[arr.length - 1];
+  let count = 1;
+  for (let i = arr.length - 2; i >= 0; i--) {
+    // console.log(typeof arr[i]);
+    if (count % 2 !== 0) {
+      arr[i] = arr[i] * 2;
+      if (arr[i] > 9) {
+        arr[i] = arr[i] - 9;
+      }
+    }
+    count++;
+    sum += arr[i];
   }
+
   return sum;
 }
 console.log(nameFunction(12345));
