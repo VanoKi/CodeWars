@@ -14,6 +14,6 @@ function nameFunction(num) {
     sum += arr[i];
   }
 
-  return sum;
+  return sum % 10 === 0;
 }
-console.log(nameFunction(12345));
+console.log(nameFunction(79927398713));
