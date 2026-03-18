@@ -31,8 +31,9 @@ const param = {
 function nameFunction(params) {
   const checkSeven = (person) => {
     if (person.gender === 'male') {
-      if (person.children.filter((child) => child.gender === 'male').length <= 7) {
-        return true;
+      const sonsOfThePerson = person.children.filter((child) => child.gender === 'male');
+      if (sonsOfThePerson.length >= 7) {
+        return sonsOfThePerson[6];
       }
       return false;
     }
