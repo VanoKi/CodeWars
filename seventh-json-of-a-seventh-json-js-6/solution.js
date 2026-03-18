@@ -8,7 +8,6 @@ const param = {
     { name: 'D', gender: 'male', children: [] },
     { name: 'E', gender: 'male', children: [] },
     { name: 'F', gender: 'male', children: [] },
-    { name: 'G', gender: 'male', children: [] },
     {
       name: 'H',
       gender: 'male',
@@ -30,6 +29,8 @@ const param = {
 };
 function nameFunction(params) {
   const checkSeven = (person) => {
+    if (!person) return null;
+
     if (person.gender === 'male') {
       const sonsOfThePerson = person.children.filter((child) => child.gender === 'male');
       if (sonsOfThePerson.length >= 7) {
