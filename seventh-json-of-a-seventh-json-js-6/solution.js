@@ -35,9 +35,11 @@ function nameFunction(params) {
       if (sonsOfThePerson.length >= 7) {
         return sonsOfThePerson[6];
       }
-      return false;
+      return 'No seventh son of a seventh son';
     }
   };
-  return checkSeven(param);
+  const father = checkSeven(param);
+  const son = checkSeven(father);
+  return son.name;
 }
 console.log(nameFunction(param));
