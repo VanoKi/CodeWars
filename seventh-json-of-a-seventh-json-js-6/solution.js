@@ -31,7 +31,10 @@ const param = {
 function nameFunction(params) {
   const checkSeven = (person) => {
     if (person.gender === 'male') {
-      console.log(person.name);
+      if (person.children.filter((child) => child.gender === 'male').length <= 7) {
+        return true;
+      }
+      return false;
     }
   };
   return checkSeven(param);
